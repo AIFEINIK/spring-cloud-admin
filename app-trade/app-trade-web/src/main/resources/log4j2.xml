@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration status="off" monitorInterval="1800">
+    <properties>
+
+        <property name="LOG_PATH">/dianyi/log</property>
+        <property name="LOG_NAME">ac-user</property>
+    </properties>
+    <appenders>
+        <Console name="Console" target="SYSTEM_OUT" follow="true">
+            <PatternLayout
+                pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n" />
+        </Console>
+        <RollingRandomAccessFile name="running-log"
+            fileName="${LOG_PATH}/${LOG_NAME}.log" filePattern="${LOG_PATH}/${LOG_NAME}.%d{yyyy-MM-dd}.log">
+            <PatternLayout
+                pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"
+                    modulate="true" />
+            </Policies>
+            <DefaultRolloverStrategy max="7">
+                <Delete basePath="${LOG_PATH}/" maxDepth="2">
+                    <IfFileName glob="*.log" />
+                    <!--保留7天日志文件-->
+                    <IfLastModified age="7d" />
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingRandomAccessFile>
+    </appenders>
+    <loggers>
+        <root level="info">
+            <appender-ref ref="running-log" />
+            <appender-ref ref="Console" />
+        </root>
+    </loggers>
+</configuration>
