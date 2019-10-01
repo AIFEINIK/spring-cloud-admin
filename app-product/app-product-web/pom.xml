@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.example</groupId>
+		<groupId>com.app</groupId>
 		<artifactId>app-product</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
@@ -15,12 +15,12 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.example</groupId>
+			<groupId>com.app</groupId>
 			<artifactId>app-product-interface</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>com.example</groupId>
+			<groupId>com.app</groupId>
 			<artifactId>app-product-service</artifactId>
 		</dependency>
 
@@ -108,7 +108,7 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>com.example.demo.MainApplication</mainClass>
+							<mainClass>com.app.common.MainApplication</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

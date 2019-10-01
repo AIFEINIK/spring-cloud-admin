@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.example</groupId>
+		<groupId>com.app</groupId>
 		<artifactId>app-trade</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
@@ -15,12 +15,12 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.example</groupId>
+			<groupId>com.app</groupId>
 			<artifactId>app-trade-interface</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>com.example</groupId>
+			<groupId>com.app</groupId>
 			<artifactId>app-trade-service</artifactId>
 		</dependency>
 
@@ -69,6 +69,11 @@
 			<groupId>commons-logging</groupId>
 			<version>1.0.3</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -103,7 +108,7 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>com.example.demo.MainApplication</mainClass>
+							<mainClass>com.app.common.MainApplication</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

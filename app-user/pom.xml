@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.example</groupId>
+	<groupId>com.app</groupId>
 	<artifactId>app-user</artifactId>
 	<packaging>pom</packaging>
 	<version>0.0.1-SNAPSHOT</version>
@@ -23,10 +23,15 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+        <swagger.version>2.6.1</swagger.version>
+        <mybatis.version>3.3.1</mybatis.version>
 	</properties>
 
     <modules>
+        <module>app-user-common</module>
         <module>app-user-interface</module>
+        <module>app-user-dao</module>
+        <module>app-user-domain</module>
         <module>app-user-service</module>
         <module>app-user-web</module>
     </modules>
@@ -42,19 +47,37 @@
             </dependency>
 
             <dependency>
-                <groupId>com.example</groupId>
+                <groupId>com.app</groupId>
                 <artifactId>app-user-interface</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
 
             <dependency>
-                <groupId>com.example</groupId>
+                <groupId>com.app</groupId>
+                <artifactId>app-user-common</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.app</groupId>
+                <artifactId>app-user-dao</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.app</groupId>
+                <artifactId>app-user-domain</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.app</groupId>
                 <artifactId>app-user-service</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
 
             <dependency>
-                <groupId>com.example</groupId>
+                <groupId>com.app</groupId>
                 <artifactId>app-user-web</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
@@ -66,7 +89,7 @@
             </dependency>
 
             <dependency>
-                <groupId>com.example</groupId>
+                <groupId>com.app</groupId>
                 <artifactId>app-common</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
@@ -75,6 +98,47 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>1.2.47</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>1.8.13</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>1.0.9</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>23.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.reflections</groupId>
+                <artifactId>reflections</artifactId>
+                <version>0.9.11</version>
             </dependency>
 
         </dependencies>

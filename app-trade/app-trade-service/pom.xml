@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.example</groupId>
+		<groupId>com.app</groupId>
 		<artifactId>app-trade</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
@@ -20,12 +20,12 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.example</groupId>
+			<groupId>com.app</groupId>
 			<artifactId>app-user-interface</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>com.example</groupId>
+			<groupId>com.app</groupId>
 			<artifactId>app-product-interface</artifactId>
 		</dependency>
 
@@ -40,7 +40,7 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.example</groupId>
+			<groupId>com.app</groupId>
 			<artifactId>app-common</artifactId>
 		</dependency>
 

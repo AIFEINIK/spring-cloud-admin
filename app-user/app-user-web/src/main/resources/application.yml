@@ -12,8 +12,21 @@ eureka:
 spring:
   application:
     name: app-user
+    http:
+      encoding.charset: UTF-8
+      encoding.enable: true
+      encoding.force: true
+
   zipkin:
       base-url: http://localhost:9411
   sleuth:
     sampler:
       percentage: 1.0
+
+#logging:
+#  config: classpath:log4j2.xml
+
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.app.dao.entity
+  config-location: classpath:mybatis/mybatis_config.xml
