@@ -1,9 +1,10 @@
-package com.example.demo.controller;
+package com.app.web.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.example.demo.UserMgrFacade;
-import com.example.demo.request.UserRequest;
-import com.example.demo.service.UserMgrService;
+import com.app.interfaces.UserMgrFacade;
+import com.app.interfaces.request.UserRequest;
+import com.app.service.UserMgrService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,12 +26,16 @@ public class UserMgrController implements UserMgrFacade {
 
     @Override
     //服务熔断保护
-    //@HystrixCommand(fallbackMethod = "getUserByIdErrorFallback")
+    @HystrixCommand(fallbackMethod = "getUserByIdErrorFallback")
     public String getUserById(String uid) {
         if (uid.equals("999")) {
             throw new IllegalArgumentException("用户ID不合法");
         }
         return userMgrService.getUserById(uid);
+    }
+
+    public String getUserByIdErrorFallback(String uid) {
+        return "fallbackUser";
     }
 
     @Override
@@ -39,7 +44,4 @@ public class UserMgrController implements UserMgrFacade {
         return "getUser";
     }
 
-    //public String getUserByIdErrorFallback(String uid) {
-    //    return "fallbackUser";
-    //}
 }

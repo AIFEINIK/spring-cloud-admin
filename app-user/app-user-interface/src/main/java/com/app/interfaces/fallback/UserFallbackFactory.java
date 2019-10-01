@@ -1,6 +1,7 @@
-package com.example.demo;
+package com.app.interfaces.fallback;
 
-import com.example.demo.request.UserRequest;
+import com.app.interfaces.UserMgrFacade;
+import com.app.interfaces.request.UserRequest;
 import feign.hystrix.FallbackFactory;
 import org.springframework.stereotype.Component;
 

@@ -1,9 +1,9 @@
-package com.example.demo;
+package com.app.interfaces;
 
-import com.example.demo.request.UserRequest;
+import com.app.interfaces.fallback.UserFallbackFactory;
+import com.app.interfaces.request.UserRequest;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**

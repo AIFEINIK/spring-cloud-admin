@@ -1,4 +1,4 @@
-package com.example.demo.request;
+package com.app.interfaces.request;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
