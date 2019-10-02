@@ -5,6 +5,7 @@ spring:
   application:
     name: app-zuul
 
+
 eureka:
   client:
     serviceUrl:
@@ -18,5 +19,19 @@ management:
     web:
       server:
         auto-time-requests: false
+zuul:
+  ignored-services: "*" #隐藏对外暴露的真实服务提供者名
+  prefix: "/app" #统一服务访问前缀
+  routes: #映射真实的服务名称为自定义的服务名称，并暴露给外部调用
+    app-user.serviceId: app-user
+    app-user.path: /my-user/**
+    app-product.serviceId: app-product
+    app-product.path: /my-product/**
+    app-trade.serviceId: app-trade
+    app-trade.path: /my-trade/**
+
+
+
+
 
 
