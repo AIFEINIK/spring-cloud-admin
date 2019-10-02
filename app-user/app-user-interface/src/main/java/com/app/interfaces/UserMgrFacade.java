@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @date 2019/9/25
  * @since 1.0.0
  */
-@FeignClient(value = "app-user", path = UserMgrFacade.PATH_PREFIX, fallbackFactory = UserFallbackFactory.class)
+@FeignClient(value = "app-user", fallbackFactory = UserFallbackFactory.class, path = UserMgrFacade.PATH_PREFIX)
 public interface UserMgrFacade {
 
     String PATH_PREFIX = "/userMgr";

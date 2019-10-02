@@ -1,6 +1,6 @@
 package com.app.service.impl;
 
-import com.app.ProductFacade;
+import com.app.interfaces.ProductFacade;
 import com.app.interfaces.UserMgrFacade;
 import com.app.service.TradeService;
 import lombok.extern.slf4j.Slf4j;

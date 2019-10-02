@@ -26,7 +26,7 @@ public class UserMgrController implements UserMgrFacade {
 
     @Override
     //服务熔断保护
-    @HystrixCommand(fallbackMethod = "getUserByIdErrorFallback")
+    //@HystrixCommand(fallbackMethod = "getUserByIdErrorFallback")
     public String getUserById(String uid) {
         if (uid.equals("999")) {
             throw new IllegalArgumentException("用户ID不合法");
@@ -34,9 +34,9 @@ public class UserMgrController implements UserMgrFacade {
         return userMgrService.getUserById(uid);
     }
 
-    public String getUserByIdErrorFallback(String uid) {
-        return "fallbackUser";
-    }
+    //public String getUserByIdErrorFallback(String uid) {
+    //    return "fallbackUser";
+    //}
 
     @Override
     public String getUser(UserRequest request) {

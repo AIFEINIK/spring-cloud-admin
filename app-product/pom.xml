@@ -70,21 +70,6 @@
                 <artifactId>app-common</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
-
-            <!--热部署-->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-devtools</artifactId>
-                <optional>true</optional>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>springloaded</artifactId>
-                <version>1.2.6.RELEASE</version>
-            </dependency>
-            <!--热部署-->
-
         </dependencies>
     </dependencyManagement>
 
