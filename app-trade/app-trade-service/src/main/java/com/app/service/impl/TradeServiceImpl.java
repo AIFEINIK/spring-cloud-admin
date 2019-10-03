@@ -2,6 +2,8 @@ package com.app.service.impl;
 
 import com.app.interfaces.ProductFacade;
 import com.app.interfaces.UserMgrFacade;
+import com.app.interfaces.response.Result;
+import com.app.interfaces.response.UserResponse;
 import com.app.service.TradeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,19 +31,10 @@ public class TradeServiceImpl implements TradeService {
         //request.setUid(uid);
         //String user = userMgrFacade.getUser(request);
 
-        String user = userMgrFacade.getUserById("999");
-        if (user == null) {
-            return "用户信息不存在";
-        }
-        log.info("用户信息：{}", user);
+        Result<UserResponse> userResponseResult = userMgrFacade.getUserByUserCode("100");
 
-        String product = productFacade.getProductById(productId);
-        if (product == null) {
-            return "商品信息不存在";
-        }
-        log.info("商品信息：{}", product);
-
+        UserResponse data = userResponseResult.getData();
         //其他逻辑
-        return "交易成功";
+        return data.getUserName();
     }
 }

@@ -1,5 +1,8 @@
 package com.app.service;
 
+import com.app.interfaces.response.Result;
+import com.app.interfaces.response.UserResponse;
+
 /**
  * @author Feinik
  * @discription
@@ -8,5 +11,5 @@ package com.app.service;
  */
 public interface UserMgrService {
 
-    String getUserById(String uid);
+    Result<UserResponse> getUserByUserCode(String userCode);
 }

@@ -1,17 +1,21 @@
-package com.app.dao.entity;
+package com.app.interfaces.response;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
  * @author Feinik
  * @discription
- * @date 2019/9/30
+ * @date 2019/10/3
  * @since 1.0.0
  */
 @Data
-public class User {
+@NoArgsConstructor
+@Accessors(chain = true)
+public class UserResponse implements Serializable {
 
     /** 用户编号 */
     private String userCode;
@@ -27,7 +31,4 @@ public class User {
 
     /** 更新时间 */
     private String updateTime;
-
-    /** 电话 */
-    private String telephone;
 }

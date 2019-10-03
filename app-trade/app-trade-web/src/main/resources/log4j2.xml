@@ -3,7 +3,7 @@
     <properties>
 
         <property name="LOG_PATH">/dianyi/log</property>
-        <property name="LOG_NAME">ac-user</property>
+        <property name="LOG_NAME">app-trade</property>
     </properties>
     <appenders>
         <Console name="Console" target="SYSTEM_OUT" follow="true">

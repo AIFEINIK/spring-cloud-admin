@@ -2,6 +2,8 @@ package com.app.interfaces.fallback;
 
 import com.app.interfaces.UserMgrFacade;
 import com.app.interfaces.request.UserRequest;
+import com.app.interfaces.response.Result;
+import com.app.interfaces.response.UserResponse;
 import feign.hystrix.FallbackFactory;
 import org.springframework.stereotype.Component;
 
@@ -19,13 +21,16 @@ public class UserFallbackFactory implements FallbackFactory<UserMgrFacade> {
     public UserMgrFacade create(Throwable throwable) {
         return new UserMgrFacade() {
             @Override
-            public String getUserById(String uid) {
-                return "fallback_GetUserById" + uid;
+            public Result<UserResponse> getUserByUserCode(String userCode) {
+                UserResponse response = new UserResponse()
+                        .setUserCode("999")
+                        .setUserName("服务降级后的返回对象");
+                return new Result<>(response);
             }
 
             @Override
             public String getUser(UserRequest request) {
-                return "fallback_GetUser" + request.getUid();
+                return null;
             }
         };
     }

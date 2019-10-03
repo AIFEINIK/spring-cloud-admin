@@ -13,7 +13,7 @@ import java.io.InputStream;
 
 /**
  * @author Feinik
- * @discription
+ * @discription 服务降级处理
  * @date 2019/10/2
  * @since 1.0.0
  */

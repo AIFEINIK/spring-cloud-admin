@@ -29,10 +29,10 @@ spring:
     sampler:
       percentage: 1.0
 
-#logging:
-#  config: classpath:log4j2.xml
+logging:
+  config: classpath:log4j2.xml
 
 mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
-  type-aliases-package: com.app.dao.entity
+  type-aliases-package: com.app.dao
   config-location: classpath:mybatis/mybatis_config.xml

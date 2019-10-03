@@ -26,3 +26,6 @@ spring:
   sleuth:
     sampler:
       percentage: 1.0
+
+logging:
+  config: classpath:log4j2.xml

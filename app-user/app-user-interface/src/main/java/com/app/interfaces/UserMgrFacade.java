@@ -2,6 +2,8 @@ package com.app.interfaces;
 
 import com.app.interfaces.fallback.UserFallbackFactory;
 import com.app.interfaces.request.UserRequest;
+import com.app.interfaces.response.Result;
+import com.app.interfaces.response.UserResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,8 +19,8 @@ public interface UserMgrFacade {
 
     String PATH_PREFIX = "/userMgr";
 
-    @GetMapping("getUserById")
-    String getUserById(@RequestParam(value = "uid") String uid);
+    @GetMapping("getUserByUserCode")
+    Result<UserResponse> getUserByUserCode(@RequestParam(value = "userCode") String userCode);
 
     @GetMapping("getUser")
     String getUser(UserRequest request);

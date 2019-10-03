@@ -1,5 +1,6 @@
 package com.app.web;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,6 +17,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableHystrix
 @EnableSwagger2
 @ComponentScan(basePackages = "com.app")
+@MapperScan(basePackages = "com.app.dao")
 public class MainApplication {
 
 	public static void main(String[] args) {

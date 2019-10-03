@@ -14,5 +14,6 @@ management:
     web:
       server:
         auto-time-requests: false
-
+logging:
+  config: classpath:log4j2.xml
 

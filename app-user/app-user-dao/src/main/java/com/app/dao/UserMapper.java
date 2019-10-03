@@ -1,5 +1,7 @@
 package com.app.dao;
 
+import com.app.dao.entity.User;
+
 /**
  * @author Feinik
  * @discription
@@ -7,4 +9,6 @@ package com.app.dao;
  * @since 1.0.0
  */
 public interface UserMapper {
+
+    User getUserByUserCode(String userCode);
 }
