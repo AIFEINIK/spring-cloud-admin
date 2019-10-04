@@ -30,6 +30,9 @@
     <modules>
         <module>app-trade-interface</module>
         <module>app-trade-service</module>
+        <module>app-trade-common</module>
+        <module>app-trade-domain</module>
+        <module>app-trade-dao</module>
         <module>app-trade-web</module>
     </modules>
 

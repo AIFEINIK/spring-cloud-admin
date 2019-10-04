@@ -18,6 +18,7 @@ CREATE TABLE `tbl_product`(
 	PRIMARY KEY(`id`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT='产品表';
 
+DROP TABLE IF EXISTS tbl_trade_record;
 create table tbl_trade_record(
 	id int not null auto_increment comment '主键',
 	record_code varchar(50) not null comment '记录编号',

@@ -6,6 +6,7 @@ import com.app.interfaces.response.Result;
 import com.app.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,7 +25,7 @@ public class ProductController implements ProductFacade {
     private ProductService productService;
 
     @Override
-    public Result<ProductResponse> getProductByCode(String productCode) {
+    public Result<ProductResponse> getProductByCode(@PathVariable("productCode") String productCode) {
         return productService.getProductByCode(productCode);
     }
 }

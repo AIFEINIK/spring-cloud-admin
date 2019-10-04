@@ -1,13 +1,12 @@
 package com.app.web.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.app.interfaces.UserMgrFacade;
-import com.app.interfaces.request.UserRequest;
 import com.app.interfaces.response.Result;
 import com.app.interfaces.response.UserResponse;
 import com.app.service.UserMgrService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,18 +27,12 @@ public class UserMgrController implements UserMgrFacade {
     @Override
     //服务熔断保护
     //@HystrixCommand(fallbackMethod = "getUserByIdErrorFallback")
-    public Result<UserResponse> getUserByUserCode(String userCode) {
+    public Result<UserResponse> getUserByUserCode(@PathVariable("userCode") String userCode) {
         return userMgrService.getUserByUserCode(userCode);
     }
 
-    //public String getUserByIdErrorFallback(String uid) {
+    //public String getUserByUserCodeErrorFallback(@PathVariable("userCode") String userCode) {
     //    return "fallbackUser";
     //}
-
-    @Override
-    public String getUser(UserRequest request) {
-        log.info(JSON.toJSONString(request));
-        return "getUser";
-    }
 
 }

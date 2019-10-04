@@ -6,7 +6,6 @@ import com.app.interfaces.response.Result;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @author Feinik
@@ -20,5 +19,5 @@ public interface ProductFacade {
     String PATH_PREFIX = "/product";
 
     @GetMapping(value = "getProductByCode/{productCode}")
-    Result<ProductResponse> getProductByCode(@PathVariable(value = "productCode") String productCode);
+    Result<ProductResponse> getProductByCode(@PathVariable("productCode") String productCode);
 }
