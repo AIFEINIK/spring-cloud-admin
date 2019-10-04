@@ -18,6 +18,20 @@ CREATE TABLE `tbl_product`(
 	PRIMARY KEY(`id`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT='产品表';
 
+create table tbl_trade_record(
+	id int not null auto_increment comment '主键',
+	record_code varchar(50) not null comment '记录编号',
+	product_name varchar(200) not null comment '产品名称',
+	user_code varchar(50) not null comment '用户编号',
+	create_time DATETIME NOT NULL COMMENT '创建时间',
+	update_time DATETIME NOT NULL COMMENT '更新时间',
+	primary key(id)
+) ENGINE=INNODB DEFAULT CHARSET=utf8 COMMENT='交易记录表';
+
 INSERT INTO tbl_user(user_code, user_name, email, create_time, update_time, telephone) VALUES ('100', 'feinik', 'feinik@foxmail.com', NOW(), NOW(), '15000000000');
 INSERT INTO tbl_user(user_code, user_name, email, create_time, update_time, telephone) VALUES ('200', 'feinik2', 'feinik2@foxmail.com', NOW(), NOW(), '15000000002');
 INSERT INTO tbl_user(user_code, user_name, email, create_time, update_time, telephone) VALUES ('300', 'feinik3', 'feinik3@foxmail.com', NOW(), NOW(), '15000000003');
+
+INSERT INTO tbl_product(product_code, product_name, create_time, update_time) VALUES ('1000', '小米 note', NOW(), NOW());
+INSERT INTO tbl_product(product_code, product_name, create_time, update_time) VALUES ('2000', '华为 Mate pro', NOW(), NOW());
+INSERT INTO tbl_product(product_code, product_name, create_time, update_time) VALUES ('3000', 'vivo note', NOW(), NOW());

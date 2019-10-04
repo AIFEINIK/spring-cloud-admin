@@ -10,7 +10,8 @@ management:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://eureka-server1.com:8001/eureka/,http://eureka-server2.com:8002/eureka/,http://eureka-server3.com:8003/eureka/
+#      defaultZone: http://eureka-server1.com:8001/eureka/,http://eureka-server2.com:8002/eureka/,http://eureka-server3.com:8003/eureka/
+      defaultZone: http://eureka-server1.com:8001/eureka/
   instance:
       instance-id: ${spring.application.name}:${server.port}
 
@@ -21,6 +22,11 @@ feign:
 spring:
   application:
     name: app-trade
+    http:
+      encoding.charset: UTF-8
+      encoding.enable: true
+      encoding.force: true
+
   zipkin:
       base-url: http://localhost:9411
   sleuth:
@@ -29,3 +35,8 @@ spring:
 
 logging:
   config: classpath:log4j2.xml
+
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.app.dao
+  config-location: classpath:mybatis/mybatis_config.xml

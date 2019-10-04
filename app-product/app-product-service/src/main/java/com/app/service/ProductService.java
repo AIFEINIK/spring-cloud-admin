@@ -1,5 +1,8 @@
 package com.app.service;
 
+import com.app.interfaces.response.ProductResponse;
+import com.app.interfaces.response.Result;
+
 /**
  * @author Feinik
  * @discription
@@ -8,5 +11,5 @@ package com.app.service;
  */
 public interface ProductService {
 
-    String getProductById(String id);
+    Result<ProductResponse> getProductByCode(String productCode);
 }

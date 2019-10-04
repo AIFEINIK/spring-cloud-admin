@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.dao.TradeRecordMapper">
+
+    <select id="getRecordByRecordCode" resultType="com.app.dao.entity.TradeRecord">
+      select * from tbl_trade_record where record_code = #{recordCode}
+    </select>
+
+    <insert id="saveTradeRecord" keyProperty="id" useGeneratedKeys="true" parameterType="com.app.dao.entity.TradeRecord">
+        insert into tbl_trade_record
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="recordCode != null"> record_code, </if>
+            <if test="productName != null"> product_name, </if>
+            <if test="userCode != null"> user_code, </if>
+            <if test="createTime != null"> create_time, </if>
+            <if test="updateTime != null"> update_time, </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="recordCode != null"> #{recordCode}, </if>
+            <if test="productName != null"> #{productName}, </if>
+            <if test="userCode != null"> #{userCode}, </if>
+            <if test="createTime != null"> #{createTime}, </if>
+            <if test="updateTime != null"> #{updateTime}, </if>
+        </trim>
+    </insert>
+
+</mapper>

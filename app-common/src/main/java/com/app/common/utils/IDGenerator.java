@@ -113,7 +113,7 @@ public class IDGenerator {
     private static final IDGenerator ID_WORKER = new IDGenerator(LOCAL_WORK_ID, LOCAL_NODE_ID);
 
 
-    public static long createId() {
+    public static Long createId() {
         return ID_WORKER.nextId();
     }
 

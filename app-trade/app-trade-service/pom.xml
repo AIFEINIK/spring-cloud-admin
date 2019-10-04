@@ -21,6 +21,21 @@
 
 		<dependency>
 			<groupId>com.app</groupId>
+			<artifactId>app-trade-interface</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.app</groupId>
+			<artifactId>app-trade-domain</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.app</groupId>
+			<artifactId>app-trade-dao</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.app</groupId>
 			<artifactId>app-user-interface</artifactId>
 		</dependency>
 

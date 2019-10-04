@@ -1,9 +1,11 @@
 package com.app.controller;
 
-import com.app.TradeFacade;
+import com.app.interfaces.TradeFacade;
+import com.app.interfaces.request.TradeRequest;
+import com.app.interfaces.response.Result;
 import com.app.service.TradeService;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,12 +23,8 @@ public class TradeController implements TradeFacade {
     private TradeService tradeService;
 
     @Override
-    @HystrixCommand(fallbackMethod = "productTradeFallback")
-    public String productTrade(String productId, String uid) {
-        return tradeService.trade(productId, uid);
+    public Result productTrade(@RequestBody TradeRequest request) {
+        return tradeService.trade(request);
     }
 
-    public String productTradeFallback(String productId, String uid) {
-        return "tradefallback";
-    }
 }

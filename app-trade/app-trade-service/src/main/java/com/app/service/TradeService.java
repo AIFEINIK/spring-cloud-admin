@@ -1,5 +1,8 @@
 package com.app.service;
 
+import com.app.interfaces.request.TradeRequest;
+import com.app.interfaces.response.Result;
+
 /**
  * @author Feinik
  * @discription
@@ -8,5 +11,5 @@ package com.app.service;
  */
 public interface TradeService {
 
-    String trade(String productId, String uid);
+    Result trade(TradeRequest request);
 }

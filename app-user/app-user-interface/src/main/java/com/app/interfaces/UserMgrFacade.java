@@ -6,6 +6,7 @@ import com.app.interfaces.response.Result;
 import com.app.interfaces.response.UserResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
@@ -19,8 +20,8 @@ public interface UserMgrFacade {
 
     String PATH_PREFIX = "/userMgr";
 
-    @GetMapping("getUserByUserCode")
-    Result<UserResponse> getUserByUserCode(@RequestParam(value = "userCode") String userCode);
+    @GetMapping("getUserByUserCode/{userCode}")
+    Result<UserResponse> getUserByUserCode(@PathVariable (value = "userCode") String userCode);
 
     @GetMapping("getUser")
     String getUser(UserRequest request);

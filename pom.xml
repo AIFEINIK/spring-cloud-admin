@@ -19,10 +19,16 @@
         <module>app-user/app-user-web</module>
 
         <module>app-product/app-product-interface</module>
+        <module>app-product/app-product-common</module>
+        <module>app-product/app-product-dao</module>
+        <module>app-product/app-product-domain</module>
         <module>app-product/app-product-service</module>
         <module>app-product/app-product-web</module>
 
         <module>app-trade/app-trade-interface</module>
+        <module>app-trade/app-trade-common</module>
+        <module>app-trade/app-trade-dao</module>
+        <module>app-trade/app-trade-domain</module>
         <module>app-trade/app-trade-service</module>
         <module>app-trade/app-trade-web</module>
     </modules>

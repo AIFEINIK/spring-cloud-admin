@@ -1,8 +1,11 @@
 package com.app.interfaces;
 
 import com.app.interfaces.fallback.ProductFallbackFactory;
+import com.app.interfaces.response.ProductResponse;
+import com.app.interfaces.response.Result;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
@@ -16,6 +19,6 @@ public interface ProductFacade {
 
     String PATH_PREFIX = "/product";
 
-    @GetMapping(value = "getProductById")
-    String getProductById(@RequestParam(value = "id") String id);
+    @GetMapping(value = "getProductByCode/{productCode}")
+    Result<ProductResponse> getProductByCode(@PathVariable(value = "productCode") String productCode);
 }

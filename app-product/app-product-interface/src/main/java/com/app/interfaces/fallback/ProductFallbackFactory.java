@@ -1,6 +1,8 @@
 package com.app.interfaces.fallback;
 
 import com.app.interfaces.ProductFacade;
+import com.app.interfaces.response.ProductResponse;
+import com.app.interfaces.response.Result;
 import feign.hystrix.FallbackFactory;
 import org.springframework.stereotype.Component;
 
@@ -15,8 +17,6 @@ public class ProductFallbackFactory implements FallbackFactory<ProductFacade> {
 
     @Override
     public ProductFacade create(Throwable cause) {
-        return (ProductFacade) id -> {
-            return "fallbackProduct" + id;
-        };
+        return productCode -> new Result<>(new ProductResponse().setProductName("产品服务降级处理"));
     }
 }

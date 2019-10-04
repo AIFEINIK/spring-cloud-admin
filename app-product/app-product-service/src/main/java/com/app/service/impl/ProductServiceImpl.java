@@ -1,6 +1,13 @@
 package com.app.service.impl;
 
+import com.app.common.utils.BeanUtils;
+import com.app.dao.entity.Product;
+import com.app.domain.ProductDomain;
+import com.app.interfaces.enums.ReturnStatusEnum;
+import com.app.interfaces.response.ProductResponse;
+import com.app.interfaces.response.Result;
 import com.app.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,11 +19,17 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProductServiceImpl implements ProductService {
 
+    @Autowired
+    private ProductDomain productDomain;
+
     @Override
-    public String getProductById(String id) {
-        if (id.equals("1000")) {
-            return "商品名称：华为Mate30";
+    public Result<ProductResponse> getProductByCode(String productCode) {
+        final Product product = productDomain.getProductByCode(productCode);
+        if (product == null) {
+            return new Result<>(ReturnStatusEnum.PRODUCT_NOT_EXISTS.getValue(), ReturnStatusEnum.PRODUCT_NOT_EXISTS.getName());
         }
-        return null;
+
+        final ProductResponse response = BeanUtils.transform(ProductResponse.class, product, true);
+        return new Result<>(response);
     }
 }

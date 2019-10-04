@@ -1,6 +1,8 @@
 package com.app.web.controller;
 
 import com.app.interfaces.ProductFacade;
+import com.app.interfaces.response.ProductResponse;
+import com.app.interfaces.response.Result;
 import com.app.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +24,7 @@ public class ProductController implements ProductFacade {
     private ProductService productService;
 
     @Override
-    public String getProductById(String id) {
-        log.info("获取商品信息，id:{}", id);
-        if (id.equals("999")) {
-            throw new IllegalArgumentException("商品ID不合法");
-        }
-        return productService.getProductById(id);
+    public Result<ProductResponse> getProductByCode(String productCode) {
+        return productService.getProductByCode(productCode);
     }
 }
