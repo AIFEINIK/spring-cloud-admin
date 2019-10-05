@@ -3,6 +3,7 @@ CREATE TABLE `tbl_user`(
 	user_code VARCHAR(50) NOT NULL COMMENT '用户唯一编号',
 	user_name VARCHAR(200) NOT NULL COMMENT '用户名',
 	email VARCHAR(200) NOT NULL COMMENT '邮箱',
+	`status` TINYINT(5) NOT NULL DEFAULT 0 COMMENT '用户状态（0:正常，-1:删除）',
 	create_time DATETIME NOT NULL COMMENT '注册时间',
 	update_time DATETIME NOT NULL COMMENT '更新时间',
 	telephone VARCHAR(20) NOT NULL DEFAULT '' COMMENT '手机号',
