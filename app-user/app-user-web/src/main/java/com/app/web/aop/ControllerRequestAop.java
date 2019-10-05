@@ -1,8 +1,8 @@
 package com.app.web.aop;
 
+import com.app.common.annotation.RequiredParam;
 import com.app.common.utils.ParameterUtil;
 import com.app.common.utils.ReflectionUtil;
-import com.app.interfaces.annotation.RequiredParam;
 import com.app.interfaces.enums.ReturnStatusEnum;
 import com.app.interfaces.response.Result;
 import lombok.extern.slf4j.Slf4j;

@@ -1,5 +1,6 @@
 package com.app.interfaces.response;
 
+import com.app.interfaces.enums.UserStatusEnum;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
@@ -31,4 +32,6 @@ public class UserResponse implements Serializable {
 
     /** 更新时间 */
     private String updateTime;
+
+    private UserStatusEnum status;
 }

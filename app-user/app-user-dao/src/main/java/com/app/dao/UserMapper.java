@@ -1,6 +1,9 @@
 package com.app.dao;
 
 import com.app.dao.entity.User;
+import com.app.interfaces.request.ListUserRequest;
+
+import java.util.List;
 
 /**
  * @author Feinik
@@ -11,4 +14,8 @@ import com.app.dao.entity.User;
 public interface UserMapper {
 
     User getUserByUserCode(String userCode);
+
+    int countUser(ListUserRequest request);
+
+    List<User> listUser(ListUserRequest request);
 }

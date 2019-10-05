@@ -19,6 +19,11 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
+		<dependency>
+			<groupId>com.app</groupId>
+			<artifactId>app-user-interface</artifactId>
+		</dependency>
+
 	</dependencies>
 
 </project>

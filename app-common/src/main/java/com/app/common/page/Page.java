@@ -1,4 +1,4 @@
-package com.app.interfaces.response;
+package com.app.common.page;
 
 import lombok.Data;
 

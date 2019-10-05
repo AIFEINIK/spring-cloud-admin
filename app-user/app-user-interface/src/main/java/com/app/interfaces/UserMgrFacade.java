@@ -1,6 +1,8 @@
 package com.app.interfaces;
 
+import com.app.common.page.Page;
 import com.app.interfaces.fallback.UserFallbackFactory;
+import com.app.interfaces.request.ListUserRequest;
 import com.app.interfaces.response.Result;
 import com.app.interfaces.response.UserResponse;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -20,5 +22,8 @@ public interface UserMgrFacade {
 
     @GetMapping("getUserByUserCode/{userCode}")
     Result<UserResponse> getUserByUserCode(@PathVariable("userCode") String userCode);
+
+    @GetMapping("listUser")
+    Result<Page<UserResponse>> listUser(ListUserRequest request);
 
 }

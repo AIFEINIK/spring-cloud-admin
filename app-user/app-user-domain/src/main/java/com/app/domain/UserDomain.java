@@ -2,8 +2,11 @@ package com.app.domain;
 
 import com.app.dao.UserMapper;
 import com.app.dao.entity.User;
+import com.app.interfaces.request.ListUserRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 /**
  * @author Feinik
@@ -19,5 +22,13 @@ public class UserDomain {
 
     public User getUserByUserCode(String userCode) {
         return userMapper.getUserByUserCode(userCode);
+    }
+
+    public int countUser(ListUserRequest request) {
+        return userMapper.countUser(request);
+    }
+
+    public List<User> ListUser(ListUserRequest request) {
+        return userMapper.listUser(request);
     }
 }

@@ -2,8 +2,29 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.app.dao.UserMapper">
 
+    <sql id="conditionSql">
+        <if test="startTime != null and endTime != null"> and create_time between #{startTime} and #{endTime} </if>
+        <if test="status != null"> and status #{status.index} </if>
+        <if test="userCode != null"> and user_code #{userCode} </if>
+    </sql>
+
     <select id="getUserByUserCode" resultType="com.app.dao.entity.User">
       select * from tbl_user where user_code = #{userCode}
+    </select>
+
+    <select id="countUser" resultType="int" parameterType="com.app.interfaces.request.ListUserRequest">
+        select count(*) from tbl_user
+        <where>
+            <include refid="conditionSql"/>
+        </where>
+    </select>
+
+    <select id="listUser" resultType="User" parameterType="com.app.interfaces.request.ListUserRequest">
+        select * from tbl_user
+        <where>
+            <include refid="conditionSql"/>
+        </where>
+        limit #{pageFrom}, #{pageSize}
     </select>
 
 </mapper>

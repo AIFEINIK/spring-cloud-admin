@@ -1,5 +1,6 @@
 package com.app.interfaces.response;
 
+import com.app.common.page.Page;
 import com.app.interfaces.enums.ReturnStatusEnum;
 import lombok.Data;
 import lombok.NoArgsConstructor;

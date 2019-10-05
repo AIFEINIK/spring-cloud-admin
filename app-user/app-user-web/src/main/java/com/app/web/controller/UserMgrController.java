@@ -1,6 +1,8 @@
 package com.app.web.controller;
 
+import com.app.common.page.Page;
 import com.app.interfaces.UserMgrFacade;
+import com.app.interfaces.request.ListUserRequest;
 import com.app.interfaces.response.Result;
 import com.app.interfaces.response.UserResponse;
 import com.app.service.UserMgrService;
@@ -35,4 +37,9 @@ public class UserMgrController implements UserMgrFacade {
     //    return "fallbackUser";
     //}
 
+
+    @Override
+    public Result<Page<UserResponse>> listUser(ListUserRequest request) {
+        return userMgrService.listUser(request);
+    }
 }

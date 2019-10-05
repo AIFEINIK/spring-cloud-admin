@@ -1,7 +1,9 @@
 package com.app.interfaces.fallback;
 
+import com.app.common.page.Page;
 import com.app.interfaces.UserMgrFacade;
-import com.app.interfaces.request.UserRequest;
+import com.app.interfaces.enums.ReturnStatusEnum;
+import com.app.interfaces.request.ListUserRequest;
 import com.app.interfaces.response.Result;
 import com.app.interfaces.response.UserResponse;
 import feign.hystrix.FallbackFactory;
@@ -29,8 +31,8 @@ public class UserFallbackFactory implements FallbackFactory<UserMgrFacade> {
             }
 
             @Override
-            public String getUser(UserRequest request) {
-                return null;
+            public Result<Page<UserResponse>> listUser(ListUserRequest request) {
+                return new Result<>(ReturnStatusEnum.UNKNOWN.getValue(), "服务降级处理");
             }
         };
     }
