@@ -37,11 +37,6 @@
 
 		<dependency>
 			<groupId>com.app</groupId>
-			<artifactId>app-trade-interface</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>com.app</groupId>
 			<artifactId>app-trade-service</artifactId>
 		</dependency>
 

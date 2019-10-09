@@ -38,11 +38,6 @@
 
 		<dependency>
 			<groupId>com.app</groupId>
-			<artifactId>app-product-interface</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>com.app</groupId>
 			<artifactId>app-product-service</artifactId>
 		</dependency>
 
